@@ -17,11 +17,7 @@ jobs:
 
     - name: 下载 AOSP Clang 编译器
       run: |
-        mkdir -p $GITHUB_WORKSPACE/clang
-        cd $GITHUB_WORKSPACE/clang
-        # 下载官方推荐的 Clang 17 编译器
-        wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r498229b.tar.gz
-        tar -xf clang-r498229b.tar.gz
+        git clone --depth=1 https://github.com/kdrag0n/proton-clang.git $GITHUB_WORKSPACE/clang
 
     - name: 克隆小米 865 稳定内核源码
       run: |
